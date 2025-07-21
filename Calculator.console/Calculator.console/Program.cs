@@ -18,26 +18,39 @@ else
     Console.WriteLine("helytelen");
 }
 
-//milyen művelet
+//két számbekérése
+Console.WriteLine("Kérem az első számot");
+int elsoszam;
+string elso = Console.ReadLine();
+elsoszam=int.Parse(elso);
+
+Console.WriteLine("Kérem a második számot");
+int masodikszam;
+string masodik = Console.ReadLine();
+masodikszam = int.Parse(masodik);
+    
+
+
+//milyen művelet,művelet elvégzése
 switch (szöveg)
 {
     case "+":
-        Console.WriteLine("Eredmeny: {szam1+szam2}");
+        Console.WriteLine($"Eredmeny: {elsoszam+masodikszam}");
         break;
     case "-":
-        Console.WriteLine("Eredmeny: {szam1-szam2}");
+        Console.WriteLine($"Eredmeny: {elsoszam-masodikszam}");
         break;
     case "*":
-        Console.WriteLine("Eredmeny: {szam1*szam2}");
+        Console.WriteLine($"Eredmeny: {elsoszam*masodikszam}");
         break;
     case "/":
-        if (szam2 == 0)
+        if (masodikszam == 0)
         {
             Console.WriteLine("Hiba: Nullával nem lehet osztani!");
         }
         else
         {
-            Console.WriteLine("Eredmeny: {szam1/szam2}"); 
+            Console.WriteLine($"Eredmeny: {elsoszam/masodikszam}"); 
         }
         break;
 }
