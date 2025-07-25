@@ -16,18 +16,41 @@ if (írásjel == true)
 else
 {
     Console.WriteLine("helytelen");
+    return;
 }
 
 //két számbekérése
 Console.WriteLine("Kérem az első számot");
-int elsoszam;
+float elsoszam;
 string elso = Console.ReadLine();
 elsoszam=int.Parse(elso);
 
 Console.WriteLine("Kérem a második számot");
-int masodikszam;
+float masodikszam;
 string masodik = Console.ReadLine();
 masodikszam = int.Parse(masodik);
+
+string[] megengedettkarakterek = new[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "," };
+
+string[] split = masodik.Split(' ');
+
+
+
+foreach (string szam in split)
+{
+    foreach (var megengedett in megengedettkarakterek)
+    {
+        if (szam == megengedett)
+        {
+            Console.WriteLine("szám");
+        }
+        else
+        {
+            Console.WriteLine("nem szám");
+            return;
+        }
+    }
+}
     
 
 
@@ -35,7 +58,7 @@ masodikszam = int.Parse(masodik);
 switch (szöveg)
 {
     case "+":
-        Console.WriteLine($"Eredmeny: {elsoszam+masodikszam}");
+        Console.WriteLine($"Eredmeny: {elsoszam+masodikszam}"); 
         break;
     case "-":
         Console.WriteLine($"Eredmeny: {elsoszam-masodikszam}");
@@ -62,7 +85,7 @@ switch (szöveg)
 /*kérjük adja meg milyen művelet (+,-,/,*),
  ha nem műveletet ad meg  dobjon hibát (hiba) 
  kérem az első számot amit tároljon egy változóba (2 változó) vizsgálja hogy számot adtam-e meg (int.parse(string-et integer számmá alakítja), string.split, for/foreach)
- kérem az második számot amit tároljon egy változóba vizsgálja hogy számot adtam-e meg (int.parse, string.split)
+ kérem az második számot amit tároljon egy változóba vizsgálja hogy számot adtam-e meg (int.parse, string.split) szamotadtam meg metódusba kell megírni 
  milyen művelet (osztás második szám nem lehet 0 (switch case string example)
  eredmény
   
